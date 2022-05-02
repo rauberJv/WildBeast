@@ -1,9 +1,24 @@
-/* body {
-    background: rgba(0,0,0,.1);
+body, p, h1, ul, li, blockquote {
+    padding: 0;
+    margin: 0;
 }
-*/
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Volkorn", Georgia, serif;
+}
+
 img {
-    max-width: 100px;
+    display: block;
+    max-width: 100%;
+    border-radius: 5px;
 }
 
 /* GRID GERAL */
@@ -18,23 +33,178 @@ img {
     ;
 }
 
+/* Header */
 .header {
     grid-area: header;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
 }
 
+.logo {
+    max-width: 200px;
+}
+
+.header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.125em;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.header nav a:hover {
+    background-color: rgba(0,0,0,.5);
+}
+
+.header nav li + li {
+    margin-left: 30px;
+}
+
+/* Sidenav */
 .sidenav {
     grid-area: sidenav;
+    background: #fafbfc;
+    padding: 30px;
 }
 
+.sidenav li a {
+    display: block;
+    min-width: 60px;
+    max-width: 100px;
+    margin: 0 auto 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, 0.15);
+    transition: .3s ease-out;
+}
+
+.sidenav li a:hover {
+    background: #B07DFB;
+}
+
+
+
+/* Content */
 .content {
     grid-area: content;
+    max-width: 900px;
+    padding: 30px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
+.col-wide {
+    grid-column: 1 / -1;
+}
+
+.imagem-1 {
+    grid-row: span 2;
+    align-self: end;
+}
+
+.imagem-2 {
+    align-self: end;
+}
+
+/* Estilos content */
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0,0,0,.7);
+}
+
+.informacoes p + p {
+    margin-top: 30px;
+}
+
+/* titulo */
+
+.titulo {
+    color: #B07DFB;
+}
+
+.titulo h1 {
+    font-size: 3.75em;
+    line-height: 1;
+    font-weight: 700;
+    
+}
+
+.titulo span {
+    font-size: 0.875em;
+    font-style: italic;
+}
+
+/* Caracteristicas */
+
+.caracteristicas {
+    display: flex;
+    align-items: flex-start;
+}
+
+.caracteristicas > div {
+    width: 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, 0.15);
+    position: relative;
+}
+
+.caracteristicas > div:first-child {
+    margin-right: 30px;
+}
+
+.numero {
+    font-size: 3em;
+    line-height: 1;
+    margin: 10px auto;
+}
+
+.caracteristicas span {
+    display: block;
+    color: #B07DFB;
+}
+
+.rotulo {
+    background: white;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    top: 2px;
+    padding: 5px 0;
+}
+
+/* Anuncios */
 .anuncios {
     grid-area: ads;
+    background: #fafbfc;
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    gap: 30px;
 }
 
+/* Footer */
 .footer {
     grid-area: footer;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+    padding: 30px;
+    text-align: center;
+    color: white;
 }
 
