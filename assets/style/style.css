@@ -12,7 +12,7 @@ a {
 }
 
 body {
-    font-family: "Volkorn", Georgia, serif;
+    font-family: Vollkorn, Georgia, serif;
 }
 
 img {
@@ -111,12 +111,24 @@ img {
 }
 
 .imagem-1 {
+    width: 100%;
     grid-row: span 2;
     align-self: end;
 }
 
+.destaque {
+    font-size: 0.875em;
+    max-width: 16em;
+    color: #B07DFB;
+}
+
 .imagem-2 {
     align-self: end;
+    width: 100%;
+}
+
+.imagem-3 {
+    width: 100%;
 }
 
 /* Estilos content */
@@ -187,6 +199,36 @@ p {
     position: relative;
     top: 2px;
     padding: 5px 0;
+}
+
+/* Citacao e Atributos */
+
+.citacao, .atributos {
+    padding: 30px;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, 0.15);
+}
+
+.citacao p {
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+}
+
+.atributos li {
+    color: white;
+    font-size: 1.125em;
+    padding: 15px;
+    font-family: Courier, monospace;
+    text-align: start;
+}
+
+.atributos li + li {
+    border-top: 2px solid #B07DFB;
 }
 
 /* Anuncios */
