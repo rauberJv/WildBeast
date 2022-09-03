@@ -33,6 +33,30 @@ img {
     ;
 }
 
+@media (max-width: 1200px){
+    .estrutura {
+        grid-template-areas: 
+            "header header header"
+            "sidenav content content"
+            "sidenav ads ads"
+            "footer footer footer"
+        ;
+    }    
+}
+
+@media (max-width: 760px){
+    .estrutura {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "sidenav"
+            "content"
+            "ads"
+            "footer"
+        ;
+    }    
+
+}
 /* Header */
 .header {
     grid-area: header;
@@ -70,6 +94,24 @@ img {
     margin-left: 30px;
 }
 
+@media (max-width:760px){
+    .header {
+        grid-template-columns: auto;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .header nav a {
+        font-size: 1em;
+    }
+
+    .header nav li + li {
+        margin-left: 10px;
+    }
+}
+
 /* Sidenav */
 .sidenav {
     grid-area: sidenav;
@@ -93,7 +135,48 @@ img {
     background: #B07DFB;
 }
 
+@keyframes animacaoArrow {
+    from {
+        right: 30px;
+    }
 
+    to {
+        right: 20px;
+    }
+}
+
+@media (max-width:760px) {
+    .sidenav ul {
+        display: flex;
+        overflow: auto;
+    }
+
+    .sidenav ul li {
+        flex: 1 0 60px;
+    }
+
+    .sidenav {
+        position: relative;
+        padding: 0 30px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .sidenav::after {
+        content: '→';
+        position: absolute;
+        top: 0;
+        right: 20px;
+        animation: animacaoArrow .5s ease-in-out 0s  infinite alternate;
+        color: rgba(0,0,0,.5);
+    }
+
+    .sidenav li a {
+        margin: 30px 30px 30px 30px;
+    }
+
+}
 
 /* Content */
 .content {
@@ -104,6 +187,12 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+}
+
+@media (max-width: 600px){
+    .content {
+        grid-template-columns: auto;
+    }
 }
 
 .col-wide {
@@ -208,6 +297,7 @@ p {
     background: linear-gradient(135deg, #8844ee, #B07DFB);
     border-radius: 5px;
     box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, 0.15);
+    align-self: start;
 }
 
 .citacao p {
@@ -239,6 +329,7 @@ p {
     align-content: start;
     padding: 30px;
     gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /* Footer */
@@ -247,6 +338,9 @@ p {
     background: linear-gradient(135deg, #8844ee, #B07DFB);
     padding: 30px;
     text-align: center;
+}
+
+.footer p {
     color: white;
 }
 
